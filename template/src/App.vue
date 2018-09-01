@@ -11,7 +11,7 @@
 
 <script>
 {{#unless router}}
-import HelloWorld from './components/HelloWorld'
+import HelloWorld from './components/HelloWorld';
 
 {{/unless}}
 export default {
@@ -19,7 +19,7 @@ export default {
   components: {
     HelloWorld
   }{{/router}}
-}
+};
 </script>
 
 <style>

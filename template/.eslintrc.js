@@ -8,11 +8,20 @@ module.exports = {
   env: {
     browser: true,
   },
+  {{#if_eq lintConfig "yangmin"}}
+  extends: [
+    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
+    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
+    'plugin:vue/essential',
+    // https://github.com/standard/standard/blob/master/docs/RULES-en.md
+    'standard'
+  ],
+  {{/if_eq}}
   {{#if_eq lintConfig "standard"}}
   extends: [
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
     // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    'plugin:vue/essential', 
+    'plugin:vue/essential',
     // https://github.com/standard/standard/blob/master/docs/RULES-en.md
     'standard'
   ],
@@ -43,6 +52,22 @@ module.exports = {
   {{/if_eq}}
   // add your custom rules here
   rules: {
+    {{#if_eq lintConfig "yangmin"}}
+    // allow paren-less arrow functions
+    'arrow-parens': 0,
+    // allow async-await
+    'generator-star-spacing': 0,
+    'semi': ['error', 'always'],
+    'indent': 0,
+    'no-tabs': 'off',
+    'padded-blocks': 0,
+    "parser": "babel-eslint",
+    "quotes": [1, "single"],//引号类型 `` "" ''
+    // 函数名与括号之间允许无空格，兼容prettier
+    'space-before-function-paren': 0,
+    // allow debugger during development
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+    {{/if_eq}}
     {{#if_eq lintConfig "standard"}}
     // allow async-await
     'generator-star-spacing': 'off',
@@ -68,7 +93,9 @@ module.exports = {
       optionalDependencies: ['test/unit/index.js']
     }],
     {{/if_eq}}
+    {{#unless_eq lintConfig "yangmin"}}
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    {{/unless_eq}}
   }
 }

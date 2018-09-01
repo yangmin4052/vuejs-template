@@ -85,6 +85,11 @@ module.exports = {
       message: 'Pick an ESLint preset',
       choices: [
         {
+          name: 'Yangmin (https://github.com/standard/standard)',
+          value: 'yangmin',
+          short: 'Yangmin',
+        },
+        {
           name: 'Standard (https://github.com/standard/standard)',
           value: 'standard',
           short: 'Standard',
