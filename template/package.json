@@ -22,7 +22,12 @@
     {{#lint}}
     "lint": "eslint --ext .js,.vue src{{#unit}} test/unit{{/unit}}{{#e2e}} test/e2e/specs{{/e2e}}",
     {{/lint}}
-    "build": "node build/build.js"
+    "build:onlineTest": "set RUN_ENV=onlineTest&& node build/build.js",
+    "build:onlineProduction": "set RUN_ENV=onlineProduction&& node build/build.js",
+    "buildt": "npm run build:onlineTest",
+    "buildp": "npm run build:onlineProduction",
+    "bt": "npm run build:onlineTest",
+    "bp": "npm run build:onlineProduction"
   },
   "dependencies": {
     "vue": "^2.5.2"{{#router}},
