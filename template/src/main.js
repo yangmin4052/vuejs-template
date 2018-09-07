@@ -4,11 +4,13 @@
 {{/if_eq}}
 import Vue from 'vue';
 import App from './App';
+import {api} from '@/utils/api';
 {{#router}}
 import router from './router';
 {{/router}}
 
 Vue.config.productionTip = false;
+Vue.prototype.$api = api;
 
 /* eslint-disable no-new */
 new Vue({
