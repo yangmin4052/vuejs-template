@@ -31,6 +31,11 @@ export default {
 {{#if_eq cssConfig "css"}}
 <style>
 {{/if_eq}}
+{{#rem}}
+body {
+  font-size: 16px;
+}
+{{/rem}}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

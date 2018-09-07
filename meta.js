@@ -84,6 +84,11 @@ module.exports = {
       type: 'confirm',
       message: 'Install axios?',
     },
+    rem: {
+      when: 'isNotTest',
+      type: 'confirm',
+      message: 'Use rem layout?',
+    },
     cssConfig: {
       when: 'isNotTest',
       type: 'list',
@@ -208,6 +213,7 @@ module.exports = {
     'test/e2e/**/*': 'e2e',
     'src/router/**/*': 'router',
     'src/store/**/*': 'vuex',
+    'src/utils/htmlSizeCalculation.js': 'rem',
   },
   complete: function(data, { chalk }) {
     const green = chalk.green

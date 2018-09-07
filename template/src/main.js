@@ -14,7 +14,13 @@ import store from './store';
 {{#axios}}
 import axios from 'axios';
 {{/axios}}
+{{#rem}}
+import htmlSizeCalculation from '@/utils/htmlSizeCalculation';
+{{/rem}}
 
+{{#rem}}
+htmlSizeCalculation(document, window);
+{{/rem}}
 Vue.config.productionTip = false;
 Vue.prototype.$api = api;
 {{#axios}}
