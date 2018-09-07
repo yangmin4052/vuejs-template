@@ -11,9 +11,15 @@ import router from './router';
 {{#vuex}}
 import store from './store';
 {{/vuex}}
+{{#axios}}
+import axios from 'axios';
+{{/axios}}
 
 Vue.config.productionTip = false;
 Vue.prototype.$api = api;
+{{#axios}}
+Vue.prototype.$axios = axios;
+{{/axios}}
 
 /* eslint-disable no-new */
 new Vue({

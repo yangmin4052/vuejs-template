@@ -79,6 +79,11 @@ module.exports = {
       type: 'confirm',
       message: 'Install vuex?',
     },
+    axios: {
+      when: 'isNotTest',
+      type: 'confirm',
+      message: 'Install axios?',
+    },
     cssConfig: {
       when: 'isNotTest',
       type: 'list',
