@@ -84,6 +84,11 @@ module.exports = {
       type: 'confirm',
       message: 'Install axios?',
     },
+    wxShare: {
+      when: 'isNotTest && router',
+      type: 'confirm',
+      message: 'Use wxShare?',
+    },
     rem: {
       when: 'isNotTest',
       type: 'confirm',
@@ -214,6 +219,7 @@ module.exports = {
     'src/router/**/*': 'router',
     'src/store/**/*': 'vuex',
     'src/utils/htmlSizeCalculation.js': 'rem',
+    'src/wxShare/**/*': 'wxShare',
   },
   complete: function(data, { chalk }) {
     const green = chalk.green

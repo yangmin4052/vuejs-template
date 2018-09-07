@@ -1,0 +1,5 @@
+let shareParams = {};
+
+export {
+  shareParams
+};

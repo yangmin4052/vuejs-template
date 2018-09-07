@@ -17,6 +17,9 @@ import axios from 'axios';
 {{#rem}}
 import htmlSizeCalculation from '@/utils/htmlSizeCalculation';
 {{/rem}}
+{{#wxShare}}
+import {wxShare} from '@/wxShare';
+{{/wxShare}}
 
 {{#rem}}
 htmlSizeCalculation(document, window);
@@ -26,6 +29,14 @@ Vue.prototype.$api = api;
 {{#axios}}
 Vue.prototype.$axios = axios;
 {{/axios}}
+{{#wxShare}}
+// 微信分享
+router.beforeEach((to, form, next) => {
+  wxShare(to.path, to.query);
+  window.document.title = to.meta.title;
+  next();
+});
+{{/wxShare}}
 
 /* eslint-disable no-new */
 new Vue({
