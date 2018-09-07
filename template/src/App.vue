@@ -22,7 +22,15 @@ export default {
 };
 </script>
 
+{{#if_eq cssConfig "scss"}}
+<style lang="scss">
+{{/if_eq}}
+{{#if_eq cssConfig "sass"}}
+<style lang="sass">
+{{/if_eq}}
+{{#if_eq cssConfig "css"}}
 <style>
+{{/if_eq}}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

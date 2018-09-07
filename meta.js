@@ -74,6 +74,28 @@ module.exports = {
       type: 'confirm',
       message: 'Install vue-router?',
     },
+    cssConfig: {
+      when: 'isNotTest',
+      type: 'list',
+      message: 'Pick an CSS extension language',
+      choices: [
+        {
+          name: 'SCSS',
+          value: 'scss',
+          short: 'SCSS',
+        },
+        {
+          name: 'SASS',
+          value: 'sass',
+          short: 'SASS',
+        },
+        {
+          name: 'CSS',
+          value: 'css',
+          short: 'CSS',
+        },
+      ],
+    },
     lint: {
       when: 'isNotTest',
       type: 'confirm',
